@@ -4,7 +4,7 @@ using namespace std;
 struct agenda{
 	char nome[40];
 	char email[40];
-	char numero[11];
+	char numero[15];
 };
 
 struct No{
@@ -38,11 +38,14 @@ fila* Insere(fila* FL){
 	No* novo;
 	novo= new No;
 	cout<<"Nome: ";
-	cin>>novo->info.nome;
+	cin.ignore();
+	cin.get(novo->info.nome, 40);
 	cout<<"Numero: ";
-	cin>>novo->info.numero;
+	cin.ignore();
+	cin.get(novo->info.numero, 15);
 	cout<<"Email: ";
-	cin>>novo->info.email;
+	cin.ignore();
+	cin.get(novo->info.email, 40);
 	novo->prox=NULL;
 	if(FilaVazia(FL)){
 		FL->primeiro=FL->ultimo=novo;
