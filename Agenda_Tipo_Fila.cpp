@@ -39,13 +39,13 @@ fila* Insere(fila* FL){
 	novo= new No;
 	cout<<"Nome: ";
 	cin.ignore();
-	cin.get(novo->info.nome, 40);
+	cin.getline(novo->info.nome, 40);
 	cout<<"Numero: ";
 	cin.ignore();
-	cin.get(novo->info.numero, 15);
+	cin.getline(novo->info.numero, 15);
 	cout<<"Email: ";
 	cin.ignore();
-	cin.get(novo->info.email, 40);
+	cin.getline(novo->info.email, 40);
 	novo->prox=NULL;
 	if(FilaVazia(FL)){
 		FL->primeiro=FL->ultimo=novo;
